@@ -55,3 +55,12 @@ CounterTest >> testStartingAtFive [
 c := Counter startingAt: 5.
 self assert: c count equals: 5
 ]
+
+{ #category : #'as yet unclassified' }
+CounterTest >> testtest [
+	| c | 
+	c:= Counter startingAt: 4.
+	c count: 10 or: 15. 
+   self assert: c count equals: 15.
+
+]

@@ -23,6 +23,13 @@ Counter >> count: anInteger [
 
 ]
 
+{ #category : #accessing }
+Counter >> count: anInteger or: anInteger2 [ 
+ self count > 5 ifTrue: [ count:= anInteger] 
+                ifFalse: [  count:= anInteger2  ].
+
+]
+
 { #category : #'as yet unclassified' }
 Counter >> decrement [
 	self count: self count - 1 .
