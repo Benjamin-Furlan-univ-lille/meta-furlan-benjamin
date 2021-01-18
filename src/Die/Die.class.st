@@ -40,6 +40,6 @@ Die >> printOn: aStream [
 
 { #category : #'as yet unclassified' }
 Die >> roll [
-	faces:= 6 atRandom.
+	faces:= faces atRandom.
 	^ faces
 ]

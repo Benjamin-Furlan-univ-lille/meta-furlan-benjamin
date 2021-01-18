@@ -18,8 +18,19 @@ DieHandle >> diceNumber [
 ]
 
 { #category : #'as yet unclassified' }
+DieHandle >> handle [ 
+   ^ handle 
+]
+
+{ #category : #'as yet unclassified' }
 DieHandle >> initialize [
    super initialize.
    handle:= Set new.
 
+]
+
+{ #category : #'as yet unclassified' }
+DieHandle >> roll [
+	handle:= handle do: [:each | each roll  ]
+	
 ]
