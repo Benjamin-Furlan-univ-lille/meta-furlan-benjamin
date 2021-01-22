@@ -8,6 +8,18 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
+DieHandle >> + dieHandle [
+	^ self addAll: dieHandle handle.
+]
+
+{ #category : #'as yet unclassified' }
+DieHandle >> addAll: aCollection [ 
+	aCollection do:[:each | self addDie:each];
+	yourself.
+	^ self
+]
+
+{ #category : #'as yet unclassified' }
 DieHandle >> addDie: aDie [ 
 	handle add: aDie 
 ]

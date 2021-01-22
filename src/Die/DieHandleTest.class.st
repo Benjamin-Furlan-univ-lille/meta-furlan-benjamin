@@ -39,5 +39,23 @@ DieHandleTest >> testRoll [
 
 { #category : #tests }
 DieHandleTest >> testSimpleHandle [
-   self assert: 2 D20 dicenumber = 2
+   self assert: 2 D20 diceNumber = 2
+]
+
+{ #category : #tests }
+DieHandleTest >> testSumming [
+	| handle | 
+	handle := 3 D20 + 2 D6.
+	self assert: handle diceNumber equals:5
+	
+]
+
+{ #category : #tests }
+DieHandleTest >> testdiceNumber [
+	|handle|
+	handle := DieHandle new
+	addDie: (Die withFaces: 5);
+	addDie: (Die withFaces: 7);
+	addDie: (Die withFaces: 10).
+   self assert: handle diceNumber equals: 3
 ]
