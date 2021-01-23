@@ -8,8 +8,8 @@ Class {
 }
 
 { #category : #'as yet unclassified' }
-DieHandle >> + dieHandle [
-	^ self addAll: dieHandle handle.
+DieHandle >> + aDicable [ 
+	^ aDicable sumWithHandle: self
 ]
 
 { #category : #'as yet unclassified' }
@@ -45,4 +45,22 @@ DieHandle >> initialize [
 DieHandle >> roll [
 	handle:= handle do: [:each | each roll  ]
 	
+]
+
+{ #category : #'as yet unclassified' }
+DieHandle >> sumWithDie: aDie [ 
+	| hand |
+	hand:=self class new.
+	self handle do: [ :each | hand addDie: each ].
+	hand addDie: aDie.
+	^ hand
+]
+
+{ #category : #'as yet unclassified' }
+DieHandle >> sumWithHandle: aDieHandle [
+	| hand |
+	hand:=self class new.
+	self handle do: [ :each | hand addDie: each ].
+	aDieHandle handle do:[ :each | hand addDie: each ].
+	^ hand
 ]
