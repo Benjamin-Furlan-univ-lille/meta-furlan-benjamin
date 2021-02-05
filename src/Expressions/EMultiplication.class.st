@@ -20,6 +20,11 @@ EMultiplication class >> right: anEconstantr left:anEconstantl [
 ]
 
 { #category : #'as yet unclassified' }
+EMultiplication >> acceptVisitor: aVisitor [
+	aVisitor visiteMultiplication: self .
+]
+
+{ #category : #'as yet unclassified' }
 EMultiplication >> evaluate [
 	^ right evaluate * left evaluate.
 ]

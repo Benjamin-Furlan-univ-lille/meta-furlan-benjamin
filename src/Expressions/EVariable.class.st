@@ -13,8 +13,18 @@ EVariable class >> id: aString [
 ]
 
 { #category : #'as yet unclassified' }
+EVariable >> acceptVisitor: aVisitor [ 
+	aVisitor visiteVariable: self.
+]
+
+{ #category : #'as yet unclassified' }
 EVariable >> evaluateWith: aBindingDictionary [ 
 	^ (aBindingDictionary at: id) .
+]
+
+{ #category : #'as yet unclassified' }
+EVariable >> id [
+	^ id.
 ]
 
 { #category : #'as yet unclassified' }

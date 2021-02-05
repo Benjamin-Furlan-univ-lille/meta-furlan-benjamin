@@ -10,7 +10,12 @@ Class {
 
 { #category : #'as yet unclassified' }
 BinaryExpression >> evaluateWith: aCollection [ 
-	^ (right evaluateWith: aCollection asDictionary ) + (left evaluateWith: aCollection asDictionary )
+	^ self subclassResponsibility.
+]
+
+{ #category : #'as yet unclassified' }
+BinaryExpression >> left [
+	^ left 
 ]
 
 { #category : #'as yet unclassified' }
@@ -32,6 +37,11 @@ BinaryExpression >> printOn: aStream [
 			  nextPutAll: ' ';
 			  nextPutAll: right printString ;
 			  nextPutAll: ' )'.
+]
+
+{ #category : #'as yet unclassified' }
+BinaryExpression >> right [
+	^ right 
 ]
 
 { #category : #'as yet unclassified' }

@@ -21,8 +21,18 @@ EAddition class >> right: anEconstant left: anEconstant2 [
 ]
 
 { #category : #'as yet unclassified' }
+EAddition >> acceptVisitor: anEPrintor [ 
+	anEPrintor visiteAddition: self.
+]
+
+{ #category : #'as yet unclassified' }
 EAddition >> evaluate [
 	^ right evaluate + left evaluate.
+]
+
+{ #category : #'as yet unclassified' }
+EAddition >> evaluateWith: aCollection [ 
+	^ (right evaluateWith: aCollection asDictionary ) + (left evaluateWith: aCollection asDictionary )
 ]
 
 { #category : #'as yet unclassified' }

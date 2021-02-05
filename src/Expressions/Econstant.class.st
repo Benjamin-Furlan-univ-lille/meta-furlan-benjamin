@@ -25,6 +25,12 @@ Econstant class >> value: anInteger [
 ]
 
 { #category : #'as yet unclassified' }
+Econstant >> acceptVisitor: aVisitor [
+	aVisitor visiteEConstant: self.
+	
+]
+
+{ #category : #'as yet unclassified' }
 Econstant >> evaluate [
 	^ value
 ]
@@ -32,6 +38,12 @@ Econstant >> evaluate [
 { #category : #'as yet unclassified' }
 Econstant >> printOn: aStream [
 	aStream nextPutAll: value printString 
+]
+
+{ #category : #'as yet unclassified' }
+Econstant >> value [
+	^ value.
+
 ]
 
 { #category : #'as yet unclassified' }
