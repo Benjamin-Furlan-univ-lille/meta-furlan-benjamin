@@ -42,7 +42,7 @@ Econstant >> printOn: aStream [
 
 { #category : #'as yet unclassified' }
 Econstant >> value [
-	^ value.
+	^ value
 
 ]
 

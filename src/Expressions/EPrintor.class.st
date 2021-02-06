@@ -57,7 +57,7 @@ EPrintor >> visiteRaisedTo: anERaisedTo [
 
 { #category : #'as yet unclassified' }
 EPrintor >> visiteVariable: anEVariable [
-	stream nextPutAll: anEVariable id.
+	^ anEVariable id 
 	
 	 
 ]
