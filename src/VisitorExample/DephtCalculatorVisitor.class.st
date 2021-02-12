@@ -1,31 +1,30 @@
 Class {
 	#name : #DephtCalculatorVisitor,
-	#superclass : #Object,
+	#superclass : #BaseASTVisitor,
 	#category : #VisitorExample
 }
 
 { #category : #'as yet unclassified' }
-DephtCalculatorVisitor >> visitLiteralValueNode: aRBMessageNode [ [ ^ 1  ]
-]
-
-{ #category : #'as yet unclassified' }
-DephtCalculatorVisitor >> visitMSequenceNode: aRBMessageNode [ [ ^ 1 + (aRBMessageNode  children inject: 0
-	into: [ :max :node | max max: (node acceptVisitor: self)  ] ) ]
+DephtCalculatorVisitor >> visitLiteralValueNode: aRBLiteralValueNode [ [ ^ self visitNode: aRBLiteralValueNode ]
 ]
 
 { #category : #'as yet unclassified' }
 DephtCalculatorVisitor >> visitMessageNode: aRBMessageNode [ [ 
-	^ 1 + (aRBMessageNode children 
-	 inject: 0
-	 into: [ :max :node | max max: (node acceptVisitor: self ) ])
-	 ]
+	^ self visitNode: aRBMessageNode ]
 ]
 
 { #category : #'as yet unclassified' }
-DephtCalculatorVisitor >> visitMethodNode: aRBMessageNode [ [ ^ 1 + (aRBMessageNode  children inject: 0
-	into: [ :max :node | max max: (node acceptVisitor: self)  ] ) ]
+DephtCalculatorVisitor >> visitMethodNode: aRBMessageNode [ [ ^ self visitNode: aRBMessageNode ]
 ]
 
 { #category : #'as yet unclassified' }
-DephtCalculatorVisitor >> visitSelfNode: aSelfNode [ [ ^ 1 ]
+DephtCalculatorVisitor >> visitNode: aNode [ [ ^ 1 + (aNode children inject: 0 into: [ :max :node | max max: (node acceptVisitor: self) ] ) ] 
+]
+
+{ #category : #'as yet unclassified' }
+DephtCalculatorVisitor >> visitSelfNode: aSelfNode [ [ ^ self visitNode: aSelfNode ]
+]
+
+{ #category : #'as yet unclassified' }
+DephtCalculatorVisitor >> visitSequenceNode: aRBSequenceNode [ [ ^ self visitNode: aRBSequenceNode ]
 ]
